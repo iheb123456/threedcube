@@ -1,0 +1,93 @@
+!DOCTYPE html>
+<html>
+  <head>
+     <title>activités three.js</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport"
+	      content="width=device-width,initiale-scale=1,user-scalable=no">
+	 <link rel ="stylesheet" href="css/style.css">
+	 <script src="js/three.min.js"></script>
+	 
+  </head>
+  <body >
+     
+	 <script>
+
+	
+	
+	
+	 var renderer,scene,camera,cube;
+	 var rotation=true;
+	 var chrono= new THree.Clock();
+	 var temps;
+	 var vANG=3
+	 var key={left:0,rigjht:0,up:0,down:0}
+	 var texture= new THREE.TextureLoader().load( 'textures/crate.gif');
+	 
+	 window.addEventListener('keydown',function(event){
+	 if(event.keyCode==32) {
+	 rotation=!rotation;
+	 }
+	 });
+	 function init(){
+	 
+	  scene=new THREE.Scene();
+	  var axisHelper=new THREE.AxisHelper(5);
+	 scene.add(axisHelper);
+	 
+		 camera=new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight,0.1,1000);
+	 camera.position.z=3
+	 ;
+	  renderer=new THREE.WebGLRenderer();
+	 
+	 
+	 renderer.setSize(window.innerWidth, window.innerHeight);
+	 
+	 
+	document.body.appendChild(renderer.domElement);
+	
+	 cubeGeo=new THREE.BoxGeometry(1,1,1);
+	 cubeMat=new THREE.MeshBasicMaterial( { map: texture} );
+	 cube=new THREE.Mesh(cubeGeo,cubeMat);
+	scene.add(cube);
+	/*window.addEventListener('keydown',function(event) {if(event.keyCode==37)cube.rotation.y+=0.1});
+	window.addEventListener('keydown',function(event) {if(event.keyCode==39)cube.rotation.y-=0.1});
+	window.addEventListener('keydown',function(event) {if(event.keyCode==38)cube.rotation.x-=0.1});
+	window.addEventListener('keydown',function(event) {if(event.keyCode==40)cube.rotation.x+=0.1});
+	
+	window.addEventListener('keydown',function(event) {if(event.keyCode==37)cube.rotation.y+=0.1});
+	window.addEventListener('keydown',function(event) {if(event.keyCode==39)cube.rotation.y-=0.1});
+	window.addEventListener('keydown',function(event) {if(event.keyCode==38)cube.rotation.x-=0.1});
+	window.addEventListener('keydown',function(event) {if(event.keyCode==40)cube.rotation.x+=0.1});
+	}*/
+	animation=function(){
+	deltatemps=chrono.getDelta();
+	if (keys.left==1)}
+	cube.rotation.y=cube.rotation.y- vAnv*deltatemps;
+	if (keys.right==1)}
+	cube.rotation.y=cube.rotation.y- vAnv*deltatemps;
+	}
+	if
+	   function update(){
+	   if(rotation==true){
+	   
+	   }
+	   };
+		 function render(){
+	requestAnimationFrame(render);
+	
+	renderer.render(scene,camera);
+	update();
+	}
+	
+	
+	
+	init();
+	
+	render();
+	</script>
+	 
+	 </body>
+	 </html>
+	 
+	 
